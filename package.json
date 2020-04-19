@@ -1,0 +1,23 @@
+{
+  "name": "pmts",
+  "version": "0.0.1",
+  "description": "cli tool to convert postman collection to slate documentation page",
+  "main": "index.js",
+  "bin": {
+    "pmts": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": ["postman", "slate", "documentation", "postman", "collection"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}

@@ -1,0 +1,46 @@
+# <%- collection.info.name %>
+<%- collection.info.description %>
+
+<% for (var i in collection.item) { %>
+<% var r = collection.item[i] %>
+## <%- r.name %>
+```curl
+curl --location --request <%- r.request.method %> '<%- r.request.url.raw %>' \
+<% for(var j in r.request.header) { -%>
+<% var header = r.request.header[j] -%>
+  --header '<%- header.key %>: <%- header.value %>' \
+<% } -%>
+<% if (r.request.body) { -%>
+  --data-raw <%- r.request.body.raw %>
+<% } %>
+```
+<% if (r.response.length > 0) { -%>
+
+> The above command returns JSON responses similar to the following:
+
+<% for (var k in r.response) { -%>
+<% var res = r.response[k] -%>
+
+> <%- res.code %> <%- res.status %> - <%- res.name %>
+
+```json
+<%- res.body %>
+```
+<% } %>
+<% } %>
+
+### HTTP Request
+
+`<%- r.request.method %> <%- r.request.url.raw %>`
+
+<% if (r.request.url.query && (r.request.url.query.length > 0)) { %>
+### Query Parameters
+Parameter     | Example
+------------- | ------------
+<% for (var q in r.request.url.query) { -%>
+<% var queryParam = r.request.url.query[q] -%>
+<%- queryParam.key %> | <%- queryParam.value %>
+<% } -%>
+<% } %>
+
+<% } %>
