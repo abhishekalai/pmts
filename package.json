@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "cli tool to convert postman collection to slate documentation page",
   "repository": "git+ssh://github.com/abhishekalai/pmts.git",
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/abhishekalai/pmts/LICENSE"
+  }],
   "main": "index.js",
   "bin": {
     "pmts": "./index.js"
