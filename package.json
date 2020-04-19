@@ -2,6 +2,7 @@
   "name": "pmts",
   "version": "0.0.1",
   "description": "cli tool to convert postman collection to slate documentation page",
+  "repository": "git+ssh://github.com/abhishekalai/pmts.git",
   "main": "index.js",
   "bin": {
     "pmts": "./index.js"
