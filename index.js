@@ -23,7 +23,8 @@ const options = yargs
 let collection = fs.readFileSync(path.join('./', options.c));
 collection = JSON.parse(collection);
 const outputPath = path.join('./', options.o);
+const templatePath = path.join(__dirname, 'templates/main.ejs');
 
-const compiled = ejs.compile(fs.readFileSync('./templates/main.ejs', 'utf8'), collection);
+const compiled = ejs.compile(fs.readFileSync(templatePath, 'utf8'), collection);
 fs.writeFileSync(outputPath, compiled({ collection }));
 process.exit();
